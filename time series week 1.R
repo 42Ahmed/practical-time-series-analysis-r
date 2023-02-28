@@ -1,0 +1,66 @@
+library(faraway)
+data(package="faraway")
+data("coagulation")
+ls()
+coagulation
+plot(coag~diet,
+     data = coagulation)
+summary(coagulation)
+numbers = c(35,8,10,23,42)
+numbers
+print(numbers)
+summary(numbers)
+mean(numbers)
+sum(numbers)
+sd(numbers)
+hist(numbers)
+hist(numbers,xlab = "data points")
+hist(numbers,main = "histo of data")
+hist(numbers,freq = F)
+hist(numbers,col="blue")
+lines(density(numbers),col="red",lwd=3)
+hist(numbers,breaks =2)
+set.seed=2016
+score <- round(rnorm(50,78,10))
+score2 <- round(rnorm(50,70,14))
+plot(score~score2)
+plot(co2)
+model <- lm(co2~time(co2))
+model
+abline(model)
+residual <- resid(model)
+hist(residual)
+qqnorm(residual)
+qqline(residual)
+plot(residual~time(co2))
+plot(residual~time(co2),xlim=c(1960,1963))
+help(sleep)
+plot(extra~group,data = sleep)
+attach(sleep)
+extra1 <- extra[group==1]
+extra2 <- extra[group==2]
+t.test(extra1,extra2,paired = TRUE,alternative = "two.sided")
+help(trees)
+pairs(trees,pch=21,bg=c("red"))
+cov(trees)
+cor(trees)
+
+#Quiz
+quiz_data=c(37, 86, 79, 95, 61, 93, 19, 98, 121, 26, 39, 11, 26, 75, 29,130, 42, 8)
+hist(quiz_data,breaks = 10,main = "Histogram",xlab = "quiz data")
+hist(quiz_data, freq=F, breaks=10, main='Histogram', xlab='Quiz data', col='blue')
+lines(density(quiz_data), col='red', lwd=5)
+
+#Quiz2
+data <- c(37,86,79,95,61,93,19,98,121,26,39,11,26,75,29,130,42,8)
+summary(data)
+help("cheddar")
+model <- lm(taste~H2S,data = cheddar)
+summary(model)
+residual <- resid(model)
+sum(residual)
+model
+sum(model$fitted.values)
+sum(model$residuals)
+data = c(7,  5,  1,  7,  2,  5,  2,  4, 10,  6)
+t.test(data, alternative = "two.sided", paired=FALSE)
