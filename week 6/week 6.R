@@ -141,4 +141,3 @@ library(forecast)
 AirPassengers.hw <- HoltWinters(log10(AirPassengers))
 AirPassengers.forecast <- forecast(AirPassengers.hw)
 plot(AirPassengers.forecast)
-#Done
